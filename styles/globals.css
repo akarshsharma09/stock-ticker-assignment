@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #__next {
+  height: 100%;
+}
+
+body {
+  @apply bg-slate-50 text-slate-900;
+}
+
+/* Spinner animation */
+@keyframes spin { 
+  to { transform: rotate(360deg); } 
+}
+.spinner {
+  width: 36px;
+  height: 36px;
+  border: 4px solid rgba(0,0,0,0.08);
+  border-top-color: rgba(0,0,0,0.6);
+  border-radius: 9999px;
+  animation: spin 1s linear infinite;
+}
+
+/* Ticker animation */
+.ticker-track { white-space: nowrap; display: inline-block; }
+.ticker-wrap { overflow: hidden; }
+@keyframes ticker { 
+  0% { transform: translateX(0%); } 
+  100% { transform: translateX(-50%); } 
+}
+.ticker-track { 
+  display:inline-block; 
+  animation: ticker 30s linear infinite; 
+}
